@@ -1,65 +1,64 @@
 * {
-  font-family: JetbrainsMono Nerd Font;
-  font-size: 20px;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16px; /* Reduced from 20px for a slimmer bar */
   min-height: 0;
-  padding-right: 2px;
-  padding-left: 2px;
-  padding-bottom: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 #waybar {
   background: transparent;
   color: #c6d0f5;
-  margin: 2px 2px;
+  margin: 2px;
 }
 
 #workspaces {
-  border-radius: 5px;
-  margin: 5px;
   background: #101010;
-  margin-left: 1rem;
+  border-radius: 5px;
+  margin: 4px 8px 4px 12px; /* Adjusted for tighter spacing */
 }
 
 #workspaces button {
   color: #babbf1;
   border-radius: 5px;
-  padding: 0.4rem;
+  padding: 0 6px; /* Reduced padding */
 }
 
 #workspaces button.active {
   color: #99d1db;
-  border-radius: 5px;
 }
 
 #workspaces button:hover {
   color: #85c1dc;
-  border-radius: 5px;
 }
 
-#custom-music,
-#tray,
-#backlight,
 #clock,
-#battery,
 #pulseaudio,
+#backlight,
+#battery,
 #network,
 #cpu,
 #memory,
-#custom-lock,
-#custom-power {
-  background-color: #101010;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
-}
-
-#memory {
-  border-radius: 0px 5px 5px 0px;
+#tray,
+#custom-lock {
+  background: #101010;
+  border-radius: 5px;
+  padding: 0 8px; /* Reduced from 0.5rem 1rem */
+  margin: 4px 4px; /* Tighter margins */
 }
 
 #clock {
   color: #8caaee;
-  border-radius: 5px;
-  margin-right: 1rem;
+  margin: 4px 12px 4px 4px; /* Slightly wider right margin for balance */
+}
+
+#pulseaudio {
+  color: #ea999c;
+  margin-left: 12px; /* Keep left margin for symmetry */
+}
+
+#backlight {
+  color: #e5c890;
 }
 
 #battery {
@@ -74,40 +73,23 @@
   color: #e78284;
 }
 
-#backlight {
-  color: #e5c890;
+#network {
+  color: #81c8be;
 }
 
-#backlight,
-#battery {
-  border-radius: 0;
+#cpu {
+  color: #f4b8e4;
 }
 
-#pulseaudio {
-  color: #ea999c;
-  border-radius: 5px 0px 0px 5%;
-  margin-left: 1rem;
-}
-
-#custom-music {
-  color: #ca9ee6;
-  border-radius: 5px;
-}
-
-#custom-lock {
-  border-radius: 5px 0px 0px 5px;
-  color: #babbf1;
-}
-
-#custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
-  color: #e78284;
+#memory {
+  color: #c6d0f5;
 }
 
 #tray {
-  margin-right: 1rem;
-  margin-left: 1rem;
-  border-radius: 5px;
+  margin: 4px 12px; /* Balanced tray margins */
 }
 
+#custom-lock {
+  color: #babbf1;
+  margin-right: 12px; /* Symmetry with pulseaudio */
+}
