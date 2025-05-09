@@ -7,5 +7,6 @@ sudo pacman -S ttf-font-awesome waybar ttf-jetbrains-mono-nerd ttf-nerd-fonts-sy
 sudo pacman -S hyprlock --noconfirm --needed
 sudo pacman -S ghostty
 sudo pacman -S hyprpaper
+sudo pacman -S nwg-look
 paru -Syu wlogout-git --noconfirm --needed
 
