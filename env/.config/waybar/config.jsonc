@@ -36,7 +36,7 @@
   "clock": {
     "timezone": "Africa/Cairo",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m/%Y - %H:%M:%S}"
+    "format": "{:%d/%m/%Y - %I:%M:%S %p}"
   },
   "network": {
     "format-wifi": "󰤢 ",
