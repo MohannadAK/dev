@@ -11,7 +11,7 @@
         "cpu",
         "memory",
         "tray",
-        "custom/lock",
+        "custom/lock"
     ],
     "hyprland/workspaces": {
         "format": "{name}: {icon}",
