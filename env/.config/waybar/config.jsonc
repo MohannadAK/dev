@@ -27,7 +27,7 @@
     "clock": {
         "timezone": "Africa/Cairo",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%d/%m/%Y %H:%M}"
+        "format": "{:%I:%M %p %d/%m/%Y}"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
