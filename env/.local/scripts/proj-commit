@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-
 # Script to find all Git repositories in the current directory (or subdirectories)
 # and perform git add, commit, and push operations.
 
-# Exit on any error
-set -e
+# Default commit message
+DEFAULT_MSG="automated dev commit"
+COMMIT_MSG=${1:-"$DEFAULT_MSG"}
 
 # Get the current working directory
 CURRENT_DIR=$(pwd)
@@ -12,35 +12,48 @@ CURRENT_DIR=$(pwd)
 # Function to process a single Git repository
 process_repo() {
     local repo_dir="$1"
+    echo "-------------------------------------"
     echo "Processing repository: $repo_dir"
 
     # Change to the repository directory
     pushd "$repo_dir" > /dev/null
 
+    # Get current branch
+    local current_branch=$(git rev-parse --abbrev-ref HEAD)
+    echo "Current branch: $current_branch"
+
     # Check if there are changes to commit
     if git status --porcelain | grep -q .; then
         # Add all changes
+        echo "Changes detected, adding files..."
         git add .
 
-        # Commit changes with a default message
-        git commit -m 'automated dev commit' || {
-            echo "No changes to commit in $repo_dir"
-        }
-
-        # Push to the remote repository
-        git push || {
-            echo "Failed to push in $repo_dir. Check remote configuration or network."
-        }
+        # Commit changes with the provided message
+        echo "Committing with message: '$COMMIT_MSG'"
+        if git commit -m "$COMMIT_MSG"; then
+            # Push to the remote repository
+            echo "Pushing to origin/$current_branch..."
+            if git push origin "$current_branch"; then
+                echo "✓ Successfully pushed changes"
+            else
+                echo "✗ Failed to push changes to origin/$current_branch"
+                echo "  Check remote configuration or network."
+            fi
+        else
+            echo "✗ Failed to commit changes"
+        fi
     else
-        echo "No changes to commit in $repo_dir"
+        echo "✓ No changes to commit"
     fi
 
     # Return to the original directory
     popd > /dev/null
+    echo "-------------------------------------"
 }
 
 # Find all directories containing a .git folder
 echo "Searching for Git repositories in $CURRENT_DIR..."
+
 find "$CURRENT_DIR" -type d -name ".git" | while read -r git_dir; do
     # Get the parent directory of .git (the actual repository root)
     repo_dir=$(dirname "$git_dir")
