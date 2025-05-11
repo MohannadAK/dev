@@ -1,0 +1,128 @@
+rock_manifest = {
+   data = {
+      plenary = {
+         filetypes = {
+            ["base.lua"] = "ba83018fd5d521b2a38b933582531e59",
+            ["builtin.lua"] = "2581583576b2c3c692c694e8728a50da"
+         }
+      }
+   },
+   lua = {
+      luassert = {
+         ["array.lua"] = "a3597420b35f43e02bd7721ceffa52de",
+         ["assert.lua"] = "4c3a746b57d71a6315c724aa9e20384c",
+         ["assertions.lua"] = "527931b0cd7646261d0738edf8d748d6",
+         ["compatibility.lua"] = "90c60281b15729c51082548903f941c7",
+         formatters = {
+            ["binarystring.lua"] = "1cf3fba0573869e42fe1374f3919b2db",
+            ["init.lua"] = "9842c79929b51698ff5f925cbf511e37"
+         },
+         ["init.lua"] = "38edb8efb69fa44c235f9cc0884198c0",
+         languages = {
+            ["en.lua"] = "14268101fcddfbf9e22b5d9683815a63"
+         },
+         ["match.lua"] = "9fcd14b357f2cb6802baf654b3b9e2fa",
+         matchers = {
+            ["composite.lua"] = "9bd6f059229ceabfd56de2a572a628ff",
+            ["core.lua"] = "1e1fb1b85a73acb2b8d7bfa238b01e04",
+            ["init.lua"] = "9ab33a60d7d377bfe0f4f1444ef5d600"
+         },
+         ["mock.lua"] = "f8310817f772468c7ce2e3bbd2d18643",
+         ["modifiers.lua"] = "ef6c106c065ba04c5c664439db82e427",
+         ["namespaces.lua"] = "8dde7ef12282e586914454ac27cbec60",
+         ["spy.lua"] = "05651cdf35da46d7a2d726009cb90795",
+         ["state.lua"] = "1a6406c5e1c5fbb9419d0f07e9cf3303",
+         ["stub.lua"] = "fe69240533b4c18ad2005c2d894b7557",
+         ["util.lua"] = "d7080aebbbe64e6b444ddfec3214a449"
+      },
+      plenary = {
+         _meta = {
+            ["_luassert.lua"] = "5a2ee66dd1a74016484a08b33d085b00"
+         },
+         async = {
+            ["api.lua"] = "37d4c241eabadcea0c526c483899d863",
+            ["async.lua"] = "52a321d6ee2496aad0d3db8025f692da",
+            ["control.lua"] = "026788ddd2daa31db523b20186c7cdf1",
+            ["init.lua"] = "dfbe40648509c29e51b1bb8813fc8cc8",
+            ["lsp.lua"] = "d35d20ec07bf07737f60f74f2628ff20",
+            ["structs.lua"] = "812595922286653a4f68db51ffc6b8e7",
+            ["tests.lua"] = "fc7eac55ecf464f809c248bbfc1db78e",
+            ["util.lua"] = "5445944ed6eadc408ce57f1d18f06198",
+            ["uv_async.lua"] = "2a9cfa6cb037a8b66122cec2feef5856"
+         },
+         async_lib = {
+            ["api.lua"] = "3192d51dd33ee70098279d1f9f7867e3",
+            ["async.lua"] = "744a2f0155404e8fc519ab8832c849dc",
+            ["init.lua"] = "babd671bd31fa668aa0bb94b4c9e5513",
+            ["lsp.lua"] = "1496e6b8929cf24ae8d416e6b8597f75",
+            ["structs.lua"] = "a7a06f7fb2c6a89305a48ef123f4c87a",
+            ["tests.lua"] = "466252dcd6597d263b4eceb0dc688ec5",
+            ["util.lua"] = "97815a67faa9bd0594a4e7c585adf67f",
+            ["uv_async.lua"] = "d26c79ffe4f7b3cb6c623aede7bc161b"
+         },
+         benchmark = {
+            ["init.lua"] = "b0c7321606a5b77a0f915de452320e56",
+            ["stat.lua"] = "9dfddd26f874e79bdee0773c57b08810"
+         },
+         ["bit.lua"] = "c1242872a488007048a2fbe769906861",
+         ["busted.lua"] = "da38e9e5500907c0101450bf1aa37f11",
+         ["class.lua"] = "d0b258402d5839996aaeb75c4b507b0b",
+         collections = {
+            ["py_list.lua"] = "eb8403d14eef118e78f1c2c2e5ce3d3e"
+         },
+         ["compat.lua"] = "0977cac3f6d6c5de404913e14d384d2a",
+         ["context_manager.lua"] = "3a59b45a12936d697355ab1638a14fe9",
+         ["curl.lua"] = "c80aa0ffbf53c98d14a9e27d6af1279d",
+         ["debug_utils.lua"] = "9362a78d7f4d1b8bc836640de283353a",
+         ["enum.lua"] = "bfb8f89915f80658695f8dbada67dada",
+         ["errors.lua"] = "a39cf5fc1c6642bd3cf631ea5ec2a2d9",
+         ["filetype.lua"] = "be47ab2aa7acd41bea9be80323214fc0",
+         ["fun.lua"] = "713058172801d2427e9d670cbd8b0dca",
+         ["functional.lua"] = "be8ed5a614e1ad59540753774dea8ec8",
+         ["init.lua"] = "3814c65db80f62c61d854797b9c25691",
+         ["iterators.lua"] = "60c39e027360ba1f082c322f6f9a0289",
+         ["job.lua"] = "9022190c9d08e0ea688b202f4f1c22bc",
+         ["json.lua"] = "724b6a8acbc498fdcf09e3d9a4e36e29",
+         ["log.lua"] = "e819c0da81e095b20573ec976aa61bba",
+         lsp = {
+            ["override.lua"] = "424a207aeeeeb54d858e480b793d912e"
+         },
+         neorocks = {
+            ["init.lua"] = "1117e199d3980495cebc90f6c1b5c1ac"
+         },
+         ["nvim_meta.lua"] = "9292adc81b35a4188635d1bbdba1af16",
+         ["operators.lua"] = "dd0d8d59d77b2b406e32eb23d1d52b93",
+         ["path.lua"] = "7f18c21fd00d6449894d785bbe189115",
+         popup = {
+            ["init.lua"] = "a13e46b0000d419ab885611319c4dd90",
+            ["utils.lua"] = "ba82fd273233615598a5934c59ade438"
+         },
+         profile = {
+            ["lua_profiler.lua"] = "7982caaef0ccc0393f9b41b3b5352de6",
+            ["memory_profiler.lua"] = "c4547eac8da2e3f0d1c8df479c2900d2",
+            ["p.lua"] = "b49065c5a37f70f1a09338f916b7b328"
+         },
+         ["profile.lua"] = "6dc3e55c6ff395ef5b7b9045240101bb",
+         ["reload.lua"] = "aabfbb2dfae39e2f8aba43cbf90b082f",
+         ["run.lua"] = "d2f3478da4fb1ab8ab5179429b649e53",
+         ["scandir.lua"] = "150a9941d213ddff29429d7f843d1483",
+         ["strings.lua"] = "678bcda7a93920cf14456dc3ccd77d2f",
+         ["tbl.lua"] = "2947dc8678233f52c4345e212f002f9d",
+         ["test_harness.lua"] = "26374151c7e6c37ee481fa266fbf4242",
+         vararg = {
+            ["init.lua"] = "238160856408eee3a90b966f79c57780",
+            ["rotate.lua"] = "e591d58b1060f99e54867e74c13f9193"
+         },
+         window = {
+            ["border.lua"] = "94370d22429202792f1c7c85b4d2aa6f",
+            ["float.lua"] = "29b0df43b37bb1ad2fe101f7b31af657",
+            ["init.lua"] = "21d83fd38843c078eadfe9d122610fd2"
+         }
+      },
+      ["say.lua"] = "dd352934a1656fe97ae9c0422d2628a3"
+   },
+   ["plenary.nvim-scm-1.rockspec"] = "b5b1600977aac3fa69c1d96e7230de9e",
+   plugin = {
+      ["plenary.vim"] = "aa44419a41d4a055ec1d5287bad626f2"
+   }
+}
