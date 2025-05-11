@@ -1,35 +1,68 @@
 * {
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 16px; /* Reduced from 20px for a slimmer bar */
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  font-weight: 500;
   min-height: 0;
   padding: 0;
   margin: 0;
+  border: none;
+  border-radius: 0;
 }
 
-#waybar {
-  background: transparent;
-  color: #c6d0f5;
-  margin: 2px;
+window#waybar {
+  background: rgba(21, 22, 30, 0.85);
+  color: #cdd6f4;
+  margin: 0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-bottom: 2px solid rgba(100, 114, 125, 0.2);
+}
+
+#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* Arch logo */
+#custom-arch {
+  color: #1793d1;
+  font-size: 18px;
+  padding: 0 12px;
+  margin: 0 2px 0 8px;
 }
 
 #workspaces {
-  background: #101010;
-  border-radius: 5px;
-  margin: 4px 8px 4px 12px; /* Adjusted for tighter spacing */
+  background: rgba(30, 30, 46, 0.2);
+  border-radius: 10px;
+  margin: 4px 0 4px 4px;
+  padding: 0 5px;
 }
 
 #workspaces button {
-  color: #babbf1;
-  border-radius: 5px;
-  padding: 0 6px; /* Reduced padding */
+  color: #6c7086;
+w min-width: 24px;
+  padding: 0 5px;
+  margin: 4px 3px;
+  background: transparent;
+  transition: all 0.3s ease;
+  font-size: 16px;
 }
 
 #workspaces button.active {
-  color: #99d1db;
+  color: #cba6f7;
+  background: rgba(203, 166, 247, 0.1);
+  border-radius: 6px;
+}
+
+#workspaces button.urgent {
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.1);
+  border-radius: 6px;
 }
 
 #workspaces button:hover {
-  color: #85c1dc;
+  color: #f5c2e7;
+  background: rgba(245, 194, 231, 0.1);
+  border-radius: 6px;
 }
 
 #clock,
@@ -41,55 +74,80 @@
 #memory,
 #tray,
 #custom-lock {
-  background: #101010;
-  border-radius: 5px;
-  padding: 0 8px; /* Reduced from 0.5rem 1rem */
-  margin: 4px 4px; /* Tighter margins */
+  background: rgba(30, 30, 46, 0.5);
+  border-radius: 8px;
+  padding: 0 12px;
+  margin: 4px 2px;
+  transition: all 0.3s ease;
 }
 
 #clock {
-  color: #8caaee;
-  margin: 4px 12px 4px 4px; /* Slightly wider right margin for balance */
+  color: #89b4fa;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 4px;
+  padding: 0 12px;
+  min-width: 180px;
+  background: rgba(30, 30, 46, 0.5);
 }
 
 #pulseaudio {
-  color: #ea999c;
-  margin-left: 12px; /* Keep left margin for symmetry */
+  color: #f5c2e7;
 }
 
 #backlight {
-  color: #e5c890;
+  color: #f9e2af;
 }
 
 #battery {
-  color: #a6d189;
+  color: #a6e3a1;
 }
 
-#battery.charging {
-  color: #a6d189;
+#battery.charging, #battery.plugged {
+  color: #a6e3a1;
+  background: rgba(166, 227, 161, 0.2);
 }
 
 #battery.warning:not(.charging) {
-  color: #e78284;
+  color: #fab387;
+  background: rgba(250, 179, 135, 0.2);
+}
+
+#battery.critical:not(.charging) {
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.3);
+  animation: blink 1s infinite alternate;
 }
 
 #network {
-  color: #81c8be;
+  color: #89dceb;
+}
+
+#network.disconnected {
+  color: #f38ba8;
 }
 
 #cpu {
-  color: #f4b8e4;
+  color: #cba6f7;
 }
 
 #memory {
-  color: #c6d0f5;
+  color: #b4befe;
 }
 
 #tray {
-  margin: 4px 12px; /* Balanced tray margins */
+  padding: 0 8px;
+  margin-right: 4px;
 }
 
 #custom-lock {
-  color: #babbf1;
-  margin-right: 12px; /* Symmetry with pulseaudio */
+  color: #f38ba8;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(243, 139, 168, 0.5);
+  }
 }
