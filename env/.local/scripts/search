@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Configuration
-BROWSER="zen-browser"  # Replace with your preferred browser (e.g., chromium, google-chrome)
+BROWSER="firefox"  # Replace with your preferred browser (e.g., chromium, google-chrome)
 SEARCH_ENGINE="https://google.com/?q="  # Replace with your preferred search engine (e.g., https://www.google.com/search?q=)
 
 # Run Rofi in drun mode and capture the user's input
