@@ -50,29 +50,6 @@ update_files() {
         # Skip the current directory (.)
         [[ "$c" == "." ]] && continue
 
-        # Skip the nvim directory in ~/.config
-        if [[ "$dest_dir" == "$XDG_CONFIG_HOME" && "${c#./}" == "nvim" ]]; then
-            log "    Skipping: nvim directory to avoid modifying ~/.config/nvim"
-            continue
-        fi
-
-        # Skip the share/nvim directory in ~/.local
-        if [[ "$dest_dir" == "$HOME/.local" && "${c#./}" == "share" ]]; then
-            pushd "$c" &>/dev/null || continue
-            if [[ -d "nvim" ]]; then
-                log "    Skipping: share/nvim directory to avoid modifying ~/.local/share/nvim"
-                popd &>/dev/null
-                continue
-            fi
-            popd &>/dev/null
-        fi
-
-        # Explicitly skip the lazy directory in ~/.local
-        if [[ "$dest_dir" == "$HOME/.local" && "${c#./}" == "lazy" ]]; then
-            log "    Skipping: lazy directory to avoid modifying ~/.local/share/nvim/lazy"
-            continue
-        fi
-
         local directory="${dest_dir%/}/${c#./}"
         log "    Removing: rm -rf $directory"
 
