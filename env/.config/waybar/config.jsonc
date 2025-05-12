@@ -82,11 +82,11 @@
         "format-wifi": "󰤨 {essid}",
         "format-ethernet": "󰈁 {ifname}",
         "format-disconnected": "󰤭",
-        "format-alt": "󰤢 {bandwidthDownBits}",
+        // "format-alt": "󰤢 {bandwidthDownBits}",
         "interval": 5,
-        "on-click": "~/.local/scripts/nm-applet-toggle.sh & disown",
+        "on-click": "zsh -c '~/.local/scripts/wifimenu'",
         "tooltip": true,
-        "tooltip-format": "{ipaddr}/{cidr}"
+        "tooltip-format": "{ipaddr}/{cidr} {bandwidthDownBits}"
     },
     "cpu": {
         "interval": 2,
@@ -102,7 +102,7 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
+        "on-click": "zsh -c '~/.local/scripts/powermenu' & disown",
         "format": "󰌾"
     }
 }
