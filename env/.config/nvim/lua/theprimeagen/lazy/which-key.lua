@@ -25,9 +25,9 @@ return {
             win = {
                 border = "rounded",
                 padding = {1, 2, 1, 2},
-                -- Removed winblend, position, and margin due to invalid key errors
             },
             layout = {
+                preset = "classic", -- Use v3 preset
                 height = { min = 4, max = 25 },
                 width = { min = 20, max = 50 },
                 spacing = 3,
@@ -39,174 +39,150 @@ return {
                 group = "+",
             },
             show_help = true,
+            show_keys = true,
             triggers = { "<leader>" },
+            disable = {
+                ft = {},
+                bt = {},
+            },
+            debug = false,
         })
 
-        -- Register descriptions for default vim motions
-        wk.register({
-            a = "Append after cursor",
-            A = "Append at end of line",
-            b = "Back to beginning of word",
-            B = "Back to beginning of WORD",
-            c = "Change text",
-            C = "Change to end of line",
-            d = "Delete text",
-            D = "Delete to end of line",
-            f = "Find character forward",
-            F = "Find character backward",
-            g = "Go to commands prefix",
-            G = "Go to end of file",
-            h = "Move left",
-            H = "Move to top of screen",
-            i = "Insert before cursor",
-            I = "Insert at beginning of line",
-            j = "Move down",
-            J = { "mzJ`z", "Join Lines (Keep Cursor Position)" },
-            k = "Move up",
-            K = "Lookup keyword",
-            l = "Move right",
-            L = "Move to bottom of screen",
-            m = "Set mark",
-            M = "Move to middle of screen",
-            n = { "nzzzv", "Next Search Result (Center Cursor)" },
-            N = { "Nzzzv", "Previous Search Result (Center Cursor)" },
-            o = "Open line below",
-            O = "Open line above",
-            p = "Paste after cursor",
-            P = "Paste before cursor",
-            r = "Replace character",
-            R = "Replace mode",
-            s = "Substitute character",
-            S = "Substitute line",
-            t = "Till character forward",
-            T = "Till character backward",
-            u = "Undo",
-            U = "Undo line",
-            v = "Visual mode",
-            V = "Visual line mode",
-            w = "Forward to start of word",
-            W = "Forward to start of WORD",
-            x = "Delete character",
-            X = "Delete character backward",
-            y = "Yank text",
-            Y = "Yank line",
-            z = "View commands prefix",
-            Z = "Save and quit commands",
-            ["=ap"] = { "ma=ap'a", "Format Paragraph (Keep Position)" },
-            ["<C-d>"] = { "<C-d>zz", "Half-Page Down (Center Cursor)" },
-            ["<C-u>"] = { "<C-u>zz", "Half-Page Up (Center Cursor)" },
-            ["<C-f>"] = { "<cmd>silent !tmux neww tmux-sessionizer<CR>", "Open Tmux Sessionizer" },
-            ["<C-k>"] = { "<cmd>cnext<CR>zz", "Next Quickfix Item" },
-            ["<C-j>"] = { "<cmd>cprev<CR>zz", "Previous Quickfix Item" },
-            Q = { "<nop>", "Disabled" },
-            -- Debug commands (assuming nvim-dap)
-            ["<F5>"] = { "<cmd>lua require'dap'.continue()<CR>", "Continue Debug" },
-            ["<F9>"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
-            ["<F10>"] = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
-            ["<F11>"] = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
+        -- Default vim motions
+        wk.add({
+            { "a", desc = "Append after cursor" },
+            { "A", desc = "Append at end of line" },
+            { "b", desc = "Back to beginning of word" },
+            { "B", desc = "Back to beginning of WORD" },
+            { "c", desc = "Change text" },
+            { "C", desc = "Change to end of line" },
+            { "d", desc = "Delete text" },
+            { "D", desc = "Delete to end of line" },
+            { "f", desc = "Find character forward" },
+            { "F", desc = "Find character backward" },
+            { "g", desc = "Go to commands prefix" },
+            { "G", desc = "Go to end of file" },
+            { "h", desc = "Move left" },
+            { "H", desc = "Move to top of screen" },
+            { "i", desc = "Insert before cursor" },
+            { "I", desc = "Insert at beginning of line" },
+            { "j", desc = "Move down" },
+            { "J", "mzJ`z", desc = "Join Lines (Keep Cursor Position)" },
+            { "k", desc = "Move up" },
+            { "K", desc = "Lookup keyword" },
+            { "l", desc = "Move right" },
+            { "L", desc = "Move to bottom of screen" },
+            { "m", desc = "Set mark" },
+            { "M", desc = "Move to middle of screen" },
+            { "n", "nzzzv", desc = "Next Search Result (Center Cursor)" },
+            { "N", "Nzzzv", desc = "Previous Search Result (Center Cursor)" },
+            { "o", desc = "Open line below" },
+            { "O", desc = "Open line above" },
+            { "p", desc = "Paste after cursor" },
+            { "P", desc = "Paste before cursor" },
+            { "r", desc = "Replace character" },
+            { "R", desc = "Replace mode" },
+            { "s", desc = "Substitute character" },
+            { "S", desc = "Substitute line" },
+            { "t", desc = "Till character forward" },
+            { "T", desc = "Till character backward" },
+            { "u", desc = "Undo" },
+            { "U", desc = "Undo line" },
+            { "v", desc = "Visual mode" },
+            { "V", desc = "Visual line mode" },
+            { "w", desc = "Forward to start of word" },
+            { "W", desc = "Forward to start of WORD" },
+            { "x", desc = "Delete character" },
+            { "X", desc = "Delete character backward" },
+            { "y", desc = "Yank text" },
+            { "Y", desc = "Yank line" },
+            { "z", desc = "View commands prefix" },
+            { "Z", desc = "Save and quit commands" },
+            { "=ap", "ma=ap'a", desc = "Format Paragraph (Keep Position)" },
+            { "<C-d>", "<C-d>zz", desc = "Half-Page Down (Center Cursor)" },
+            { "<C-u>", "<C-u>zz", desc = "Half-Page Up (Center Cursor)" },
+            { "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", desc = "Open Tmux Sessionizer" },
+            { "<C-k>", "<cmd>cnext<CR>zz", desc = "Next Quickfix Item" },
+            { "<C-j>", "<cmd>cprev<CR>zz", desc = "Previous Quickfix Item" },
+            { "Q", "<nop>", desc = "Disabled" },
+            { "<F5>", "<cmd>lua require'dap'.continue()<CR>", desc = "Continue Debug" },
+            { "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", desc = "Toggle Breakpoint" },
+            { "<F10>", "<cmd>lua require'dap'.step_over()<CR>", desc = "Step Over" },
+            { "<F11>", "<cmd>lua require'dap'.step_into()<CR>", desc = "Step Into" },
         })
 
         -- Leader key mappings
-        wk.register({
-            ["<leader>"] = {
-                ["<leader>"] = { ":so<cr>", "Source Current File" },
-                Y = { [["+Y]], "Yank Line to System Clipboard" },
-                p = {
-                    name = "Project",
-                    v = { vim.cmd.Ex, "Open Netrw Explorer" },
-                },
-                t = {
-                    name = "Test",
-                    f = { "<Plug>PlenaryTestFile", "Test File" },
-                },
-                v = {
-                    name = "Vim With Me",
-                    w = {
-                        name = "With Me",
-                        m = {
-                            function()
-                                local ok, vim_with_me = pcall(require, "vim-with-me")
-                                if ok then
-                                    vim_with_me.StartVimWithMe()
-                                else
-                                    vim.notify("vim-with-me plugin not available", vim.log.levels.WARN)
-                                end
-                            end,
-                            "Start Vim With Me"
-                        },
-                        n = {
-                            function()
-                                local ok, vim_with_me = pcall(require, "vim-with-me")
-                                if ok then
-                                    vim_with_me.StopVimWithMe()
-                                else
-                                    vim.notify("vim-with-me plugin not available", vim.log.levels.WARN)
-                                end
-                            end,
-                            "Stop Vim With Me"
-                        },
-                    },
-                },
-                s = {
-                    name = "Substitute",
-                    [""] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Substitute Word" },
-                },
-                y = { [["+y]], "Yank to System Clipboard" },
-                d = { [["_d]], "Delete without Copying" },
-                f = {
-                    function()
-                        local ok, conform = pcall(require, "conform")
-                        if ok then
-                            conform.format({ bufnr = 0 })
-                        else
-                            vim.notify("conform plugin not available", vim.log.levels.WARN)
-                        end
-                    end,
-                    "Format Buffer"
-                },
-                k = { "<cmd>lnext<CR>zz", "Next Location List Item" },
-                j = { "<cmd>lprev<CR>zz", "Previous Location List Item" },
-                x = { "<cmd>!chmod +x %<CR>", "Make Current File Executable" },
-                e = {
-                    name = "Error Handling (Go)",
-                    e = { "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", "Return Error" },
-                    a = { [[oassert.NoError(err, "")<Esc>F";a]], "Assert No Error" },
-                    f = { [[oif err != nil {<CR>}<Esc>Olog.Fatalf("error: %s\n", err.Error())<Esc>jj]], "Fatal Error" },
-                    l = { [[oif err != nil {<CR>}<Esc>O.logger.Error("error", "error", err)<Esc>F.;i]], "Log Error" },
-                },
-                c = {
-                    name = "Cellular Automaton",
-                    a = {
-                        function()
-                            local ok, ca = pcall(require, "cellular-automaton")
-                            if ok then
-                                ca.start_animation("make_it_rain")
-                            else
-                                vim.notify("cellular-automaton plugin not available", vim.log.levels.WARN)
-                            end
-                        end,
-                        "Make It Rain"
-                    },
-                },
-                z = {
-                    name = "LSP",
-                    i = { "<cmd>LspRestart<cr>", "Restart LSP" },
-                },
-            },
+        wk.add({
+            { "<leader>", group = "Leader" },
+            { "<leader><leader>", ":so<cr>", desc = "Source Current File" },
+            { "<leader>Y", [["+Y]], desc = "Yank Line to System Clipboard" },
+            { "<leader>p", group = "Project" },
+            { "<leader>pv", vim.cmd.Ex, desc = "Open Netrw Explorer" },
+            { "<leader>t", group = "Test" },
+            { "<leader>tf", "<Plug>PlenaryTestFile", desc = "Test File" },
+            { "<leader>v", group = "Vim With Me" },
+            { "<leader>vw", group = "With Me" },
+            { "<leader>vwm", function()
+                local ok, vim_with_me = pcall(require, "vim-with-me")
+                if ok then
+                    vim_with_me.StartVimWithMe()
+                else
+                    vim.notify("vim-with-me plugin not available", vim.log.levels.WARN)
+                end
+            end, desc = "Start Vim With Me" },
+            { "<leader>vwn", function()
+                local ok, vim_with_me = pcall(require, "vim-with-me")
+                if ok then
+                    vim_with_me.StopVimWithMe()
+                else
+                    vim.notify("vim-with-me plugin not available", vim.log.levels.WARN)
+                end
+            end, desc = "Stop Vim With Me" },
+            { "<leader>s", group = "Substitute" },
+            { "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Substitute Word" },
+            { "<leader>y", [["+y]], desc = "Yank to System Clipboard" },
+            { "<leader>d", [["_d]], desc = "Delete without Copying" },
+            { "<leader>f", function()
+                local ok, conform = pcall(require, "conform")
+                if ok then
+                    conform.format({ bufnr =  W0 })
+                else
+                    vim.notify("conform plugin not available", vim.log.levels.WARN)
+                end
+            end, desc = "Format Buffer" },
+            { "<leader>k", "<cmd>lnext<CR>zz", desc = "Next Location List Item" },
+            { "<leader>j", "<cmd>lprev<CR>zz", desc = "Previous Location List Item" },
+            { "<leader>x", "<cmd>!chmod +x %<CR>", desc = "Make Current File Executable" },
+            { "<leader>e", group = "Error Handling (Go)" },
+            { "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", desc = "Return Error" },
+            { "<leader>ea", [[oassert.NoError(err, "")<Esc>F";a]], desc = "Assert No Error" },
+            { "<leader>ef", [[oif err != nil {<CR>}<Esc>Olog.Fatalf("error: %s\n", err.Error())<Esc>jj]], desc = "Fatal Error" },
+            { "<leader>el", [[oif err != nil {<CR>}<Esc>O.logger.Error("error", "error", err)<Esc>F.;i]], desc = "Log Error" },
+            { "<leader>c", group = "Cellular Automaton" },
+            { "<leader>ca", function()
+                local ok, ca = pcall(require, "cellular-automaton")
+                if ok then
+                    ca.start_animation("make_it_rain")
+                else
+                    vim.notify("cellular-automaton plugin not available", vim.log.levels.WARN)
+                end
+            end, desc = "Make It Rain" },
+            { "<leader>z", group = "LSP" },
+            { "<leader>zi", "<cmd>LspRestart<cr>", desc = "Restart LSP" },
         })
 
         -- Visual mode mappings
-        wk.register({
-            J = { ":m '>+1<CR>gv=gv", "Move Selection Down" },
-            K = { ":m '<-2<CR>gv=gv", "Move Selection Up" },
-            ["<leader>p"] = { [["_dP]], "Paste Without Copying" },
-            ["<leader>y"] = { [["+y]], "Yank to System Clipboard" },
-            ["<leader>d"] = { [["_d]], "Delete without Copying" },
-        }, { mode = "v" })
+        wk.add({
+            { "J", ":m '>+1<CR>gv=gv", desc = "Move Selection Down", mode = "v" },
+            { "K", ":m '<-2<CR>gv=gv", desc = "Move Selection Up", mode = "v" },
+            { "<leader>p", [["_dP]], desc = "Paste Without Copying", mode = "v" },
+            { "<leader>y", [["+y]], desc = "Yank to System Clipboard", mode = "v" },
+            { "<leader>d", [["_d]], desc = "Delete without Copying", mode = "v" },
+        })
 
         -- Insert mode mappings
-        wk.register({
-            ["<C-c>"] = { "<Esc>", "Exit Insert Mode" },
-        }, { mode = "i" })
+        wk.add({
+            { "<C-c>", "<Esc>", desc = "Exit Insert Mode", mode = "i" },
+        })
     end,
 }
