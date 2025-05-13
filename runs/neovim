@@ -6,6 +6,7 @@ rm -rf $HOME/personal/harpoon
 rm -rf $HOME/personal/vim-apm
 rm -rf $HOME/personal/vim-with-me
 rm -rf $HOME/personal/vim-arcade
+rm -rf $HOME/personal/caleb
 rm -rf $HOME/personal/unnamed_game_1
 rm -rf $HOME/personal/plenary
 
