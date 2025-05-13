@@ -74,6 +74,7 @@
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "blueman-manager",
+        "on-click-right": "bluetoothctl power toggle",
         "tooltip": true
     },
     "battery": {
@@ -101,13 +102,13 @@
     },
     "cpu": {
         "interval": 2,
-        "format": "󰻠 {usage}%",
+        "format": "󰓅 {usage}%",
         "tooltip": true,
         "tooltip-format": "CPU Usage: {usage}%"
     },
     "memory": {
         "interval": 30,
-        "format": "󰍛 {used:0.1f}G",
+        "format": "󰘚 {used:0.1f}G",
         "tooltip": true,
         "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB"
     },
