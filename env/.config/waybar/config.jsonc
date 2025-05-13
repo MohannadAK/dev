@@ -8,6 +8,7 @@
         "backlight",
         "battery",
         "network",
+        "bluetooth",
         "cpu",
         "memory",
         "tray",
@@ -21,16 +22,16 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": "󰈹",
-            "2": "󰅩",
-            "3": "󰘦",
-            "4": "󰇮",
-            "5": "󰋩",
-            "6": "󰝚",
-            "7": "󰊗",
-            "8": "󰖲",
-            "9": "󰙯",
-            "10": "󰖟",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
             "urgent": "󰗖",
             "default": "󰋙"
         },
@@ -64,6 +65,16 @@
         "on-scroll-down": "brightnessctl set 5%-",
         "smooth-scrolling-threshold": 1,
         "tooltip": false
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱 {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager",
+        "tooltip": true
     },
     "battery": {
         "states": {
