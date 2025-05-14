@@ -69,3 +69,4 @@ addToPathFront $HOME/.local/zig true # some how zig-0.13 just keeps getting adde
 
 # thanks gt
 alias gt='NODE_OPTIONS="--no-deprecation" gt'
+export PATH="$PATH:/home/victoryst/.local/share/JetBrains/Toolbox/apps/pycharm/bin"
