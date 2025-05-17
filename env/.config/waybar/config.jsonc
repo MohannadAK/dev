@@ -94,7 +94,6 @@
         "format-wifi": "󰤨 {essid}",
         "format-ethernet": "󰈁 {ifname}",
         "format-disconnected": "󰤭",
-        // "format-alt": "󰤢 {bandwidthDownBits}",
         "interval": 5,
         "on-click": "zsh -c '~/.local/scripts/wifimenu'",
         "tooltip": true,
@@ -115,6 +114,6 @@
     "custom/lock": {
         "tooltip": false,
         "on-click": "zsh -c '~/.local/scripts/powermenu' & disown",
-        "format": "󰌾"
+        "format": ""
     }
 }
