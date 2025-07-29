@@ -72,3 +72,13 @@ alias gt='NODE_OPTIONS="--no-deprecation" gt'
 export PATH="$PATH:/home/victoryst/.local/share/JetBrains/Toolbox/apps/pycharm/bin"
 export PATH="$PATH:/home/victoryst/.dotnet/tools"
 export PATH=/home/victoryst/go/bin:/home/victoryst/.turso:/home/victoryst/.local/share/pnpm:/home/victoryst/.bun/bin:/home/victoryst/.local/zig:/home/victoryst/.deno/bin:/home/victoryst/personal/sumneko/bin:/usr/local/go/bin:/home/victoryst/.local/go/bin:/home/victoryst/.local/apps/:/home/victoryst/.local/n/bin/:/home/victoryst/.local/npm/bin:/home/victoryst/.local/bin:/home/victoryst/.local/scripts:/home/victoryst/.local/apps:/home/victoryst/.local/odin:/home/victoryst/.local/.npm-global/bin:/home/victoryst/.zig:/home/theprimeagen/.fly/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/home/victoryst/.cargo/bin:/home/victoryst/personal/ghostty/zig-out/bin:/home/victoryst/.local/personal:/home/victoryst/.sst/bin:/home/victoryst/.local/share/JetBrains/Toolbox/apps/pycharm/bin:/home/victoryst/.dotnet/tools
+
+# PYENV CONFIGURATION
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
